@@ -9,10 +9,11 @@ import { UserDataService } from '../user-data.service';
 export class FormComponent {
 
   constructor(private usersvc:UserDataService){}
-  fetchData() {
-    this.usersvc.fetchData().subscribe((response) => {
-      console.log('Response from API:', response);
+  fetchData(inputval:any) {
+    this.usersvc.fetchData(inputval).subscribe((response) => {
       // Do whatever you need to do with the response data here
+      this.usersvc.data.push(response);
+      
     });
   }
 }

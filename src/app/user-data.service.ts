@@ -6,10 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserDataService {
-
+  data:any[]=[];
   constructor(private httpClient:HttpClient) { }
 
-  fetchData(): Observable<any> {
-    return this.httpClient.get('https://api.genderize.io?name=luc');
+  fetchData(input:any): Observable<any> {
+    return this.httpClient.get(`https://api.genderize.io?name=${input}`);
   }
 }
