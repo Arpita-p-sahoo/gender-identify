@@ -12,8 +12,8 @@ export class FormComponent {
   fetchData(inputval:any) {
     this.usersvc.fetchData(inputval).subscribe((response) => {
       // Do whatever you need to do with the response data here
-      this.usersvc.data.push(response);
-      
+      this.usersvc.data.push(response);    
+        
     });
   }
 }
